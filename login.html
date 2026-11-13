@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inicio de sesión de Veterinaria Huellitas">
+
+    <title>Iniciar sesión | Veterinaria Huellitas</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0c2242, #1757a6);
+            padding: 20px;
+        }
+
+        .contenedor-login {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,.2);
+            text-align: center;
+        }
+
+        .logo-login {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 15px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            background: #1757a6;
+            color: white;
+            font-size: 40px;
+        }
+
+        .contenedor-login h1 {
+            color: #102d52;
+            margin-bottom: 5px;
+        }
+
+        .contenedor-login .descripcion {
+            color: #718096;
+            margin-bottom: 25px;
+        }
+
+        .campo-login {
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .campo-login label {
+            display: block;
+            margin-bottom: 7px;
+            color: #102d52;
+            font-weight: bold;
+        }
+
+        .campo-login input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dce5ef;
+            border-radius: 8px;
+        }
+
+        .campo-login input:focus {
+            outline: 2px solid #1757a6;
+        }
+
+        .boton-login {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #1757a6;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .boton-login:hover {
+            background: #102d52;
+        }
+
+        .regresar {
+            display: block;
+            margin-top: 22px;
+            color: #1757a6;
+            font-weight: bold;
+        }
+
+        .regresar:hover {
+            color: #102d52;
+        }
+
+        .pie-login {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #dce5ef;
+            color: #718096;
+            font-size: 12px;
+        }
+
+        @media(max-width: 500px) {
+            .contenedor-login {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="contenedor-login">
+
+        <div class="logo-login">🐾</div>
+
+        <h1>Veterinaria Huellitas</h1>
+
+        <p class="descripcion">
+            Bienvenido. Ingresa tus datos para continuar.
+        </p>
+
+        <form id="formLogin">
+
+            <div class="campo-login">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="correo@ejemplo.com"
+                    required>
+            </div>
+
+            <div class="campo-login">
+                <label for="password">Contraseña</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Escribe tu contraseña"
+                    required>
+            </div>
+
+            <button type="submit" class="boton-login">
+                Iniciar sesión
+            </button>
+
+            <p id="mensaje" role="status"></p>
+
+        </form>
+
+        <a href="index.html" class="regresar">
+            ← Regresar al inicio
+        </a>
+
+        <div class="pie-login">
+            © 2026 Veterinaria Huellitas
+            <br>
+            Cuidamos lo que más quieres 🐾
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById("formLogin").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("mensaje").textContent =
+                "Formulario de demostración. El acceso requiere configurar usuarios y contraseñas.";
+        });
+    </script>
+
+</body>
+</html>
